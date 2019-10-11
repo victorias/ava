@@ -1,4 +1,4 @@
-import storeReducer from '../store/storeReducer';
+import storeReducer from '../store/reducers/storeReducer';
 
 const initialState = {
   store: [],
