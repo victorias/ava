@@ -2,8 +2,8 @@ import 'isomorphic-fetch';
 import Client from 'shopify-buy';
 
 const client = Client.buildClient({
-  domain: 'ava-bridal.myshopify.com',
-  storefrontAccessToken: '596f04f97e83f24b8b244b80d6857177',
+  domain: process.env.SHOPIFY_DOMAIN as string,
+  storefrontAccessToken: process.env.SHOPIFY_STOREFRONT_ACCESS_TOKEN as string,
 });
 
 export default client;
