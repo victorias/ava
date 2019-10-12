@@ -1,9 +1,6 @@
-import storeReducer from '../store/reducers/storeReducer';
+import cartReducer from '../cart/cartReducer';
+import { ActionTypes, RootReducer } from './types';
 
-const initialState = {
-  store: [],
-};
-
-export default (state = initialState, action: any) => ({
-  store: storeReducer(state.store, action),
+export default (state = {} as RootReducer, action: ActionTypes) => ({
+  cart: cartReducer(state.cart, action),
 });

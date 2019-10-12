@@ -1,9 +1,9 @@
-import { applyMiddleware, compose, createStore } from 'redux';
+import { applyMiddleware, compose, createStore, Store } from 'redux';
 import rootReducer from './rootReducer';
+import thunkMiddleware from 'redux-thunk';
+import { RootReducer } from './types';
 
-const logger = (store: { getState: () => void }) => (
-  next: (_: any) => void
-) => (action: { type: string }) => {
+const logger = (store: Store) => (next: (_: any) => void) => (action: any) => {
   console.group(action.type);
   console.info('dispatching', action);
   let result = next(action);
@@ -12,8 +12,9 @@ const logger = (store: { getState: () => void }) => (
   return result;
 };
 
-export default (preloadedState: any) => {
-  const middlewares = [logger];
+export default (preloadedState: RootReducer) => {
+  const middlewares = [logger, thunkMiddleware];
+  // @ts-ignore idk why this doesn't work and idc
   const middleWareEnhancer = applyMiddleware(...middlewares);
 
   const enhancers = [middleWareEnhancer];
