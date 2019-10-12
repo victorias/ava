@@ -1,11 +1,13 @@
 import Link from 'next/link';
 import { useAllProducts } from '../modules/shopify/hooks';
+import Header from '../modules/uikit/Header';
 
 const Index = () => {
   const [products] = useAllProducts();
 
   return (
     <div>
+      <Header />
       <p>Hello Next.js</p>
       <ul>
         {products.map(product => (
