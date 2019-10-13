@@ -7,7 +7,7 @@ interface Props {
 }
 
 export const GUTTER = 2; // em
-const WRAPPER = '100vw';
+const WRAPPER = '100%';
 const ROW_HEIGHT = `calc(${WRAPPER} - 11 * ${GUTTER}rem)`;
 
 const Grid = ({ children, className }: Props) => (
