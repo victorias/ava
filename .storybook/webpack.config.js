@@ -10,7 +10,6 @@ module.exports = ({ config }) => {
           configFileName: path.join(__dirname, 'tsconfig.json'),
         },
       },
-      // Optional
       {
         loader: require.resolve('react-docgen-typescript-loader'),
       },

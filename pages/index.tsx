@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { useAllProducts } from '../modules/shopify/hooks';
 import Header from '../modules/uikit/Header';
+import FeaturedHero from '../modules/front-page/FeaturedHero';
 
 const Index = () => {
   const [products] = useAllProducts();
@@ -8,6 +9,7 @@ const Index = () => {
   return (
     <div>
       <Header />
+      <FeaturedHero />
       <p>Hello Next.js</p>
       <ul>
         {products.map(product => (

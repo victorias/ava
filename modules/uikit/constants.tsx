@@ -12,3 +12,7 @@ export const FuturaWeights = {
 export const MrsEavesWeights = {
   ROMAN: '400',
 };
+
+export const Colors = {
+  WHITE: '#fff',
+};
