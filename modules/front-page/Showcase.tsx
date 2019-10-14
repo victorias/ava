@@ -17,7 +17,7 @@ const Item = styled.div`
   justify-content: space-around;
   align-items: center;
   background-size: cover;
-  background-position: center;
+  background-position: center top;
 `;
 
 interface Props {

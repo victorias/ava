@@ -9,7 +9,6 @@ interface Props {
 
 export const GUTTER = 2; // em
 const WRAPPER = '100%';
-const ROW_HEIGHT = `calc(${WRAPPER} - 11 * ${GUTTER}em)`;
 
 const Grid = ({
   children,
@@ -24,7 +23,7 @@ const Grid = ({
         grid-template-columns: repeat(${columns}, 1fr);
         grid-auto-rows: auto;
         grid-auto-flow: row;
-        grid-gap: ${GUTTER}em;
+        grid-gap: 0em;
         max-width: ${WRAPPER};
         grid-template-areas: ${gridTemplateAreas};
       }

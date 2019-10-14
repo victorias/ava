@@ -4,7 +4,7 @@ import { Fonts, FuturaWeights } from './constants';
 
 const StyledFooter = styled.footer`
   display: flex;
-  padding: 4rem;
+  padding: 6rem 4rem;
   justify-content: space-between;
 
   ul {
