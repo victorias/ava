@@ -22,7 +22,7 @@ const Grid = ({
       .grid {
         display: grid;
         grid-template-columns: repeat(${columns}, 1fr);
-        grid-auto-rows: minmax(${ROW_HEIGHT}, auto);
+        grid-auto-rows: auto;
         grid-auto-flow: row;
         grid-gap: ${GUTTER}em;
         margin: 0 auto;

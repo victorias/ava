@@ -36,6 +36,7 @@ const FeaturedHero = ({ gridArea }: Props) => (
         flex-direction: column;
       }
 
+
       h2 {
         font-family: ${Fonts.FUTURA_PT};
         font-weight: ${FuturaWeights.BOOK};
@@ -43,11 +44,7 @@ const FeaturedHero = ({ gridArea }: Props) => (
         color: ${Colors.WHITE};
         line-height: 1.2;
         grid-area: title;
-      }
-
-      .button {
-        flex: 0 0 auto;
-      }
+        margin-bottom: ${2 * GUTTER}rem;
     `}</style>
   </section>
 );
