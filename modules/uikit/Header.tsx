@@ -31,7 +31,7 @@ const Header = () => {
         }
 
         li + li {
-          margin-left: 20px;
+          margin-left: 2rem;
         }
 
         h1 {

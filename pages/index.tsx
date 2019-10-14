@@ -4,6 +4,12 @@ import Grid from '../modules/uikit/Grid';
 import Head from '../modules/uikit/Head';
 import Story from '../modules/front-page/Story';
 import Showcase from '../modules/front-page/Showcase';
+import Footer from '../modules/uikit/Footer';
+import styled from 'styled-components';
+
+const GridFooter = styled(Footer)`
+  grid-area: footer;
+`;
 
 const Index = () => {
   return (
@@ -16,11 +22,13 @@ const Index = () => {
         "hero"
         "story"
         "showcase"
+        "footer"
       `}
       >
         <FeaturedHero gridArea="hero" />
         <Story gridArea="story" />
         <Showcase gridArea="showcase" />
+        <GridFooter />
       </Grid>
       <style jsx>
         {`
