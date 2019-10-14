@@ -3,6 +3,7 @@ import FeaturedHero from '../modules/front-page/FeaturedHero';
 import Grid from '../modules/uikit/Grid';
 import Head from '../modules/uikit/Head';
 import Story from '../modules/front-page/Story';
+import Showcase from '../modules/front-page/Showcase';
 
 const Index = () => {
   return (
@@ -10,14 +11,16 @@ const Index = () => {
       <Head />
       <Header />
       <Grid
-        columns={3}
+        columns={1}
         gridTemplateAreas={`
-        "hero hero hero"
-        "story story story"
+        "hero"
+        "story"
+        "showcase"
       `}
       >
         <FeaturedHero gridArea="hero" />
         <Story gridArea="story" />
+        <Showcase gridArea="showcase" />
       </Grid>
       <style jsx>
         {`

@@ -25,7 +25,6 @@ const Grid = ({
         grid-auto-rows: auto;
         grid-auto-flow: row;
         grid-gap: ${GUTTER}em;
-        margin: 0 auto;
         max-width: ${WRAPPER};
         grid-template-areas: ${gridTemplateAreas};
       }
