@@ -17,10 +17,10 @@ const Header = () => {
       <style jsx>{`
         .header {
           display: flex;
-          width: 100vw;
           padding: 4rem;
           justify-content: space-between;
           align-items: center;
+          align-self: stretch;
         }
 
         ul {

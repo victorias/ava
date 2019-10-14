@@ -1,5 +1,4 @@
 import App from 'next/app';
-import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import withRedux from 'next-redux-wrapper';
 import configureStore from '../modules/init/configureStore';

@@ -1,26 +1,32 @@
-import Link from 'next/link';
-import { useAllProducts } from '../modules/shopify/hooks';
 import Header from '../modules/uikit/Header';
 import FeaturedHero from '../modules/front-page/FeaturedHero';
+import Grid from '../modules/uikit/Grid';
+import Head from '../modules/uikit/Head';
+import Story from '../modules/front-page/Story';
 
 const Index = () => {
-  const [products] = useAllProducts();
-
   return (
-    <div>
+    <div className="root">
+      <Head />
       <Header />
-      <FeaturedHero />
-      <p>Hello Next.js</p>
-      <ul>
-        {products.map(product => (
-          <li key={product.id}>
-            {/* TODO: fix TS */}
-            <Link href={`/dresses/${(product as any).handle}`}>
-              <a>{product.title}</a>
-            </Link>
-          </li>
-        ))}
-      </ul>
+      <Grid
+        columns={3}
+        gridTemplateAreas={`
+        "hero hero hero"
+        "story story story"
+      `}
+      >
+        <FeaturedHero gridArea="hero" />
+        <Story gridArea="story" />
+      </Grid>
+      <style jsx>
+        {`
+          .root {
+            display: flex;
+            flex-direction: column;
+          }
+        `}
+      </style>
     </div>
   );
 };

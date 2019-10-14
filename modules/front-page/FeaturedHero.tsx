@@ -1,11 +1,15 @@
 import * as React from 'react';
-import Grid, { GUTTER } from '../uikit/Grid';
+import { GUTTER } from '../uikit/Grid';
 import { Fonts, FuturaWeights, Colors } from '../uikit/constants';
 import Button from '../uikit/Button';
 
-const FeaturedHero = () => (
+interface Props {
+  gridArea: string;
+}
+
+const FeaturedHero = ({ gridArea }: Props) => (
   <section className="container">
-    <Grid className="inner">
+    <div>
       <h2>
         Wedding dresses <br />
         for the modern bride
@@ -13,32 +17,36 @@ const FeaturedHero = () => (
       <Button className="button" onClick={() => null}>
         Spring 2020 Collection
       </Button>
-    </Grid>
+    </div>
     <style jsx>{`
       .container {
-        grid-column: span 12;
         background-image: url(${require('./images/theLaw.png')});
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-      }
-      .inner {
+        grid-area: ${gridArea};
+        height: 560px;
         padding: ${2 * GUTTER}em;
+        display: flex;
+        align-items: center;
+      }
+
+      div {
+        display: flex;
+        flex-direction: column;
       }
 
       h2 {
         font-family: ${Fonts.FUTURA_PT};
         font-weight: ${FuturaWeights.BOOK};
         font-size: 4.8rem;
-        grid-column: span 5;
         color: ${Colors.WHITE};
         line-height: 1.2;
+        grid-area: title;
       }
 
       .button {
-        grid-column-start: 1;
-        grid-row-start: 2;
-        grid-column: span 4;
+        flex: 0 0 auto;
       }
     `}</style>
   </section>
