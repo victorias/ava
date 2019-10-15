@@ -3,13 +3,7 @@ import Grid, { GUTTER } from '../uikit/Grid';
 import { Fonts, FuturaWeights, Colors } from '../uikit/constants';
 import styled from 'styled-components';
 
-interface Props {
-  gridArea: string;
-}
-
 const StorySection = styled.section`
-  grid-column: span 12;
-  grid-area: ${(props: Props) => props.gridArea};
   padding: ${3.5 * GUTTER}rem ${2 * GUTTER}rem;
 
   h2 {
@@ -33,8 +27,8 @@ const StorySection = styled.section`
   }
 `;
 
-const Story = ({ gridArea }: Props) => (
-  <StorySection gridArea={gridArea}>
+const Story = () => (
+  <StorySection>
     <Grid
       columns={2}
       gridTemplateAreas={`

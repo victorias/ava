@@ -7,13 +7,30 @@ import Showcase from '../modules/front-page/Showcase';
 import Footer from '../modules/uikit/Footer';
 import styled from 'styled-components';
 
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+const GridHero = styled(FeaturedHero)`
+  grid-area: hero;
+`;
+
+const GridStory = styled(Story)`
+  grid-area: story;
+`;
+
+const GridShowcase = styled(Showcase)`
+  grid-area: showcase;
+`;
+
 const GridFooter = styled(Footer)`
   grid-area: footer;
 `;
 
 const Index = () => {
   return (
-    <div className="root">
+    <Container>
       <Head />
       <Header />
       <Grid
@@ -25,20 +42,12 @@ const Index = () => {
         "footer"
       `}
       >
-        <FeaturedHero gridArea="hero" />
-        <Story gridArea="story" />
-        <Showcase gridArea="showcase" />
+        <GridHero />
+        <GridStory />
+        <GridShowcase />
         <GridFooter />
       </Grid>
-      <style jsx>
-        {`
-          .root {
-            display: flex;
-            flex-direction: column;
-          }
-        `}
-      </style>
-    </div>
+    </Container>
   );
 };
 

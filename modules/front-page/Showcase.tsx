@@ -36,17 +36,12 @@ interface Props {
   gridArea: string;
 }
 
-const ShowcaseGrid = styled(Grid)`
-  grid-area: ${(props: Props) => props.gridArea};
-`;
-
 // row heights
 const FIRST = 484;
 const SECOND = 600;
 
-const Showcase = ({ gridArea }: Props) => (
-  <ShowcaseGrid
-    gridArea={gridArea}
+const Showcase = () => (
+  <Grid
     columns={3}
     gridTemplateAreas={`
     "rime rime lihi"
@@ -69,7 +64,7 @@ const Showcase = ({ gridArea }: Props) => (
       <ItemTitle>Piper</ItemTitle>
       <Button onClick={() => null}>More by The Law</Button>
     </Item>
-  </ShowcaseGrid>
+  </Grid>
 );
 
 export default Showcase;

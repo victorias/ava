@@ -4,16 +4,11 @@ import { Fonts, FuturaWeights, Colors } from '../uikit/constants';
 import Button from '../uikit/Button';
 import styled from 'styled-components';
 
-interface Props {
-  gridArea: string;
-}
-
 const HeroSection = styled.section`
   background-image: url(${require('./images/theLaw.png')});
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  grid-area: ${(props: Props) => props.gridArea};
   height: 560px;
   padding: ${2 * GUTTER}em;
   display: flex;
@@ -36,8 +31,8 @@ const HeroSection = styled.section`
   }
 `;
 
-const FeaturedHero = ({ gridArea }: Props) => (
-  <HeroSection gridArea={gridArea}>
+const FeaturedHero = () => (
+  <HeroSection>
     <div>
       <h2>
         Wedding dresses <br />
