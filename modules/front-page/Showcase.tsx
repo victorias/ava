@@ -2,6 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 import Grid from '../uikit/Grid';
 import Button from '../uikit/Button';
+import { Fonts, FuturaWeights, Colors } from '../uikit/constants';
 
 interface ItemProps {
   image: any;
@@ -18,8 +19,19 @@ const Item = styled.div`
   align-items: center;
   background-size: cover;
   background-position: center top;
+  position: relative;
 `;
 
+const ItemTitle = styled.h3`
+  font-family: ${Fonts.FUTURA_PT};
+  font-weight: ${FuturaWeights.DEMI};
+  position: absolute;
+  top: 4rem;
+  left: 4rem;
+  text-transform: uppercase;
+  color: ${Colors.WHITE};
+  font-size: 2.4rem;
+`;
 interface Props {
   gridArea: string;
 }
@@ -42,9 +54,11 @@ const Showcase = ({ gridArea }: Props) => (
   `}
   >
     <Item height={FIRST} image={require('./images/rime.png')} gridArea="rime">
+      <ItemTitle>Stardust</ItemTitle>
       <Button onClick={() => null}>More by Rime Adoraky</Button>
     </Item>
     <Item height={FIRST} image={require('./images/lihi.png')} gridArea="lihi">
+      <ItemTitle>Madison</ItemTitle>
       <Button onClick={() => null}>More by Lihi Hod</Button>
     </Item>
     <Item
@@ -52,6 +66,7 @@ const Showcase = ({ gridArea }: Props) => (
       image={require('./images/the-law-2.png')}
       gridArea="law"
     >
+      <ItemTitle>Piper</ItemTitle>
       <Button onClick={() => null}>More by The Law</Button>
     </Item>
   </ShowcaseGrid>

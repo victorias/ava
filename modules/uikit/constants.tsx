@@ -7,6 +7,7 @@ export const Fonts = {
 
 export const FuturaWeights = {
   BOOK: '400',
+  DEMI: '600',
 };
 
 export const MrsEavesWeights = {
