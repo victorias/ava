@@ -19,6 +19,7 @@ const StyledHeader = styled.header`
 
   ul:last-child {
     justify-content: flex-end;
+    white-space: nowrap;
   }
 
   li + li {
