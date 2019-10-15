@@ -22,6 +22,7 @@ const HeroSection = styled.section`
   div {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
   }
 
   h2 {

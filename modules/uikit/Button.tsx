@@ -16,6 +16,10 @@ const Button = styled.button`
   border-radius: 4px;
   background-color: transparent;
   border-style: solid;
+
+  :hover {
+    cursor: pointer;
+  }
 `;
 
 export default Button;

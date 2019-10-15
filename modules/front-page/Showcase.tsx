@@ -51,7 +51,7 @@ const Showcase = ({ gridArea }: Props) => (
     gridTemplateAreas={`
     "rime rime lihi"
     "law law law"
-  `}
+`}
   >
     <Item height={FIRST} image={require('./images/rime.png')} gridArea="rime">
       <ItemTitle>Stardust</ItemTitle>
