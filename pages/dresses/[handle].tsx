@@ -1,6 +1,5 @@
 import { useRouter } from 'next/router';
 import { useProductByHandle } from '../../modules/shopify/hooks';
-import AddToCartButton from '../../modules/cart/AddToCartButton';
 
 export default () => {
   const router = useRouter();
@@ -18,7 +17,6 @@ export default () => {
       {product.images.map(image => (
         <img src={image.src} key={image.id} />
       ))}
-      <AddToCartButton productId={product.id} />
     </>
   );
 };
