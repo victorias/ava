@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Fonts, FuturaWeights, MrsEavesWeights } from './constants';
+import { Fonts, FuturaWeights, MrsEavesWeights, device } from './constants';
 import styled from 'styled-components';
 
 const StyledHeader = styled.header`
@@ -31,6 +31,17 @@ const StyledHeader = styled.header`
     font-family: ${Fonts.MRS_EAVES};
     font-weight: ${MrsEavesWeights.ROMAN};
     font-size: 3.6rem;
+    white-space: nowrap;
+  }
+
+  ul:first-child {
+    display: none;
+  }
+
+  @media ${device.tablet} {
+    ul:first-child {
+      display: flex;
+    }
   }
 `;
 
