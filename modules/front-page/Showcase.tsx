@@ -2,7 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 import Grid from '../uikit/Grid';
 import Button from '../uikit/Button';
-import { Fonts, FuturaWeights, Colors } from '../uikit/constants';
+import { Fonts, FuturaWeights, Colors, device } from '../uikit/constants';
 
 interface ItemProps {
   image: any;
@@ -32,6 +32,20 @@ const ItemTitle = styled.h3`
   color: ${Colors.WHITE};
   font-size: 2.4rem;
 `;
+
+const StyledGrid = styled(Grid)`
+  grid-template-areas:
+    'rime rime rime'
+    'lihi lihi lihi'
+    'law law law';
+
+  @media ${device.tablet} {
+    grid-template-areas:
+      'rime rime lihi'
+      'law law law';
+  }
+`;
+
 interface Props {
   gridArea: string;
 }
@@ -41,11 +55,12 @@ const FIRST = 484;
 const SECOND = 600;
 
 const Showcase = () => (
-  <Grid
+  <StyledGrid
     columns={3}
     gridTemplateAreas={`
-    "rime rime lihi"
-    "law law law"
+    'rime rime rime'
+    'lihi lihi lihi'
+    'law law law'
 `}
   >
     <Item height={FIRST} image={require('./images/rime.png')} gridArea="rime">
@@ -64,7 +79,7 @@ const Showcase = () => (
       <ItemTitle>Piper</ItemTitle>
       <Button onClick={() => null}>More by The Law</Button>
     </Item>
-  </Grid>
+  </StyledGrid>
 );
 
 export default Showcase;

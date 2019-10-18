@@ -1,18 +1,23 @@
 import * as React from 'react';
 import { GUTTER } from '../uikit/Grid';
-import { Fonts, FuturaWeights, Colors } from '../uikit/constants';
+import { Fonts, FuturaWeights, Colors, device } from '../uikit/constants';
 import Button from '../uikit/Button';
 import styled from 'styled-components';
 
 const HeroSection = styled.section`
   background-image: url(${require('./images/theLaw.png')});
-  background-position: center;
+  background-position-x: -65px;
+  background-position-y: center;
   background-repeat: no-repeat;
   background-size: cover;
   height: 560px;
   padding: ${2 * GUTTER}em;
   display: flex;
   align-items: center;
+
+  @media ${device.mobileL} {
+    background-position-x: left;
+  }
 
   div {
     display: flex;

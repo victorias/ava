@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Grid, { GUTTER } from '../uikit/Grid';
-import { Fonts, FuturaWeights, Colors } from '../uikit/constants';
+import { Fonts, FuturaWeights, Colors, device } from '../uikit/constants';
 import styled from 'styled-components';
 
 const StorySection = styled.section`
@@ -27,25 +27,35 @@ const StorySection = styled.section`
   }
 `;
 
+const StyledGrid = styled(Grid)`
+  grid-template-areas:
+    'title title'
+    'body body';
+
+  @media ${device.mobileL} {
+    grid-template-areas: 'title body';
+  }
+`;
+
 const Story = () => (
   <StorySection>
-    <Grid
+    <StyledGrid
       columns={2}
       gridTemplateAreas={`
-        "title body"
+        "title title"
+        "body body"
       `}
       gap={5}
     >
       <h2>Say yes to the dress at home</h2>
       <p>
-        Tempor ut sunt duis est laboris ut velit ex reprehenderit. Culpa tempor
-        ex do consequat qui ut et amet non nostrud fugiat. Eiusmod fugiat qui
-        consectetur proident consequat velit ipsum. Anim enim nostrud sint irure
-        occaecat cillum est consequat culpa ad elit Lorem esse nisi. Ad
-        excepteur sit voluptate laborum nisi anim ea. Cillum tempor duis aute
-        sit amet amet et est consectetur est aliqua mollit.
+        We don’t think you need a sales consultant looking over your shoulder to
+        find the perfect wedding dress. The Ava bride is unafraid, highly
+        opinionated, and ready for what’s next. Shop couture wedding gowns by
+        the internet’s most sought-after designers. Try samples on at home.
+        Receive your custom tailored dress, made-to-order.
       </p>
-    </Grid>
+    </StyledGrid>
   </StorySection>
 );
 
